@@ -1,9 +1,11 @@
 import { useState, useCallback } from 'react';
 import WorldMap from './components/WorldMap';
 import NewsPopup from './components/NewsPopup';
+import LandingPage from './components/LandingPage';
 import './index.css';
 
 function App() {
+  const [showLanding, setShowLanding] = useState(true);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [currentView, setCurrentView] = useState('world'); // 'world' or 'state'
   const [currentCountry, setCurrentCountry] = useState(null);
@@ -30,6 +32,10 @@ function App() {
     }
     return selectedLocation.name;
   };
+
+  if (showLanding) {
+    return <LandingPage onEnter={() => setShowLanding(false)} />;
+  }
 
   return (
     <div className="app">

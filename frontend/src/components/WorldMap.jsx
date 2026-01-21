@@ -151,14 +151,14 @@ function WorldMap({ onLocationClick, selectedLocation, onViewChange, onClosePopu
                     'fill-color': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        '#6366f1',
-                        '#1e293b',
+                        '#0ea5e9', // sky-500
+                        '#1e293b', // slate-900
                     ],
                     'fill-opacity': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        0.8,
                         0.6,
+                        0.4,
                     ],
                 },
             });
@@ -172,8 +172,8 @@ function WorldMap({ onLocationClick, selectedLocation, onViewChange, onClosePopu
                     'line-color': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        '#a5b4fc',
-                        '#475569',
+                        '#7dd3fc', // sky-300
+                        '#475569', // slate-600
                     ],
                     'line-width': [
                         'case',
@@ -308,7 +308,7 @@ function WorldMap({ onLocationClick, selectedLocation, onViewChange, onClosePopu
 
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
-            style: 'mapbox://styles/mapbox/dark-v11',
+            style: 'mapbox://styles/kav2599/cmko73nug001901ry1je1glzt',
             center: [0, 20],
             zoom: 1.5,
             minZoom: 1,
@@ -335,14 +335,14 @@ function WorldMap({ onLocationClick, selectedLocation, onViewChange, onClosePopu
                     'fill-color': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        '#4338ca',
-                        '#1e293b',
+                        '#0ea5e9', // sky-500 (Cyan/Blue)
+                        '#0f172a', // slate-900 (Dark background) or transparent
                     ],
                     'fill-opacity': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        0.6,
                         0.4,
+                        0.0, // Transparent by default to let custom map show
                     ],
                 },
             });
@@ -356,13 +356,13 @@ function WorldMap({ onLocationClick, selectedLocation, onViewChange, onClosePopu
                     'line-color': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        '#6366f1',
-                        '#334155',
+                        '#38bdf8', // sky-400
+                        '#334155', // slate-700
                     ],
                     'line-width': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
-                        1.5,
+                        2,
                         0.5,
                     ],
                 },
